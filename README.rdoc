@@ -1,10 +1,10 @@
-= Twigga
+= Twigga (Twitter Google Gadget)
 
-Simple twitter stats gatherer for Google docs.
+Simple Google Gadget that shows current Twitter trends.
 
 = Installation
 
-Open a new spreadsheet and click "Insert" -> "Gadget" -> "Custom", input url to {this gadget}[http://github.com/ttsugriy/twigga/raw/master/twigga.xml] and press "OK".
+Open a spreadsheet and click "Insert" -> "Gadget" -> "Custom", input url to {this gadget}[http://github.com/ttsugriy/twigga/raw/master/twigga.xml] and press "OK".
 
 = LICENSE
 
