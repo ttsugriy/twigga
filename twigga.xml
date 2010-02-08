@@ -29,7 +29,7 @@
                 content_div.innerHTML = "Hello, " + prefs.getString("product_name") + "!";
                 content_div.style.width = document.body.clientWidth + 'px';
                 content_div.style.height = document.body.clientHeight + 'px';
-                $.getJSON("http://twitter.com/status/user_timeline/goldberg333.json?count=10&callback=?", function(data) {
+                $.getJSON("http://search.twitter.com/trends.json?count=10&callback=?", function(data) {
                     alert(data);
                     });
             }
