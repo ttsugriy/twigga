@@ -23,13 +23,13 @@
 
             function loadJQuery() {
                 google.load("jquery", "1.4.1");
-                setOnLoadCallback(sendQuery);
+                google.setOnLoadCallback(sendQuery);
             }
 
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
-                var content_div = _gel("content_div");
-                content_div.innerHTML = "Hello, world!";
+                var content_div = document.getElementById('content_div');
+                content_div.innerHTML = "Hello, " + prefs.getString("product_name") + "!";
                 content_div.style.width = document.body.clientWidth + 'px';
                 content_div.style.height = document.body.clientHeight + 'px';
             }
