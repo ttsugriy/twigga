@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="Twigga" />
+    <Content type="html">
+        <![CDATA[
+        Twigga - simple twitter stats gatherer for Google docs
+        ]]>
+    </Content>
+</Module>
