@@ -13,7 +13,9 @@
             src="http://www.google.com/jsapi"
             type="text/javascript" type="text/javascript"></script>
 
-        <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;"/>
+        <div id="table_div" style="overflow: auto;">
+            <img src="http://www.google.com/ig/images/spinner.gif" />
+        </div>
 
         <script type="text/javascript">
             _IG_RegisterOnloadHandler(loadJQuery);
@@ -25,13 +27,17 @@
 
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
-                var content_div = document.getElementById('content_div');
-                content_div.innerHTML = "Hello, " + prefs.getString("product_name") + "!";
-                content_div.style.width = document.body.clientWidth + 'px';
-                content_div.style.height = document.body.clientHeight + 'px';
+                var table_div = document.getElementById('content_div');
+                table_div.innerHTML = "Trends for " + prefs.getString("product_name") + "!";
+                table_div.style.width = document.body.clientWidth + 'px';
+                table_div.style.height = document.body.clientHeight + 'px';
                 $.getJSON("http://search.twitter.com/trends.json?count=10&callback=?", function(data) {
-                    alert(data);
-                    });
+                    table_div.innerHTML += "<table>";
+                    for (var i = 0; i < data.trends.length; i++) {
+                        table_div.innerHTML += "<tr><td>" + data.trends[i].name + "</td></tr>";
+                    }
+                    table_div.innerHTML += "</table>";
+                });
             }
 
         </script>
