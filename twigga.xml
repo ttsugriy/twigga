@@ -25,24 +25,15 @@
 
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
-                var head = document.getElementsByTagName('head')[0];
-                var scripts = document.getElementsByTagName('script');
                 var content_div = document.getElementById('content_div');
                 content_div.innerHTML = "Hello, " + prefs.getString("product_name") + "!";
                 content_div.style.width = document.body.clientWidth + 'px';
                 content_div.style.height = document.body.clientHeight + 'px';
-                $.getJSON('http://search.twitter.com/trends.json', function(data) {
+                $.getJSON("http://search.twitter.com/trends.json", function(data) {
                     $('#content_div').html('<p>' + data.trends + '</p>');
                     });
             }
 
-            function displayTrends(data) {
-                var trends = data.trends;
-                var content_div = document.getElementById("content_div");
-                for (var i = 0; i < trends.length; i++) {
-                    content_div.innerHTML += "trends[i].name;
-                }
-            }
         </script>
         ]]>
     </Content>
