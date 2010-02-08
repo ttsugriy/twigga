@@ -9,13 +9,27 @@
         required="true"/>
     <Content type="html">
         <![CDATA[
+        <script
+            src="http://www.google.com/jsapi"
+            type="text/javascript" type="text/javascript"></script>
+        <script
+            src="http://jquery-twitter-api.googlecode.com/svn/trunk/jquery-twitter-plugin.js"
+            type="text/javascript"></script>
+        <script type="text/javascript">
+            _IG_RegisterOnloadHandler(loadJQuery);
+
+            function loadJQuery() {
+                google.load("jquery", "1.4.1");
+            }
+        </script>
+
         <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;">
             Twigga - simple twitter stats gatherer for Google docs
         </div>
 
         <script type="text/javascript">
             var prefs = new gadgets.Prefs();
-
+            $("#content_div").text("Hello, world!");
         </script>
         ]]>
     </Content>
