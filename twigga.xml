@@ -29,7 +29,7 @@
                 content_div.innerHTML = "Hello, " + prefs.getString("product_name") + "!";
                 content_div.style.width = document.body.clientWidth + 'px';
                 content_div.style.height = document.body.clientHeight + 'px';
-                $.getJSON("http://search.twitter.com/trends.json", function(data) {
+                $.getJSON("http://search.twitter.com/trends.json?callback=?", function(data) {
                     alert(data);
                     });
             }
