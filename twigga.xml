@@ -51,6 +51,7 @@
                         tbody.appendChild(tmpRow);
                     }
                     table.appendChild(tbody);
+                    tablediv.appendChild(table);
                 });
             }
 
