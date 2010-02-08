@@ -27,7 +27,7 @@
 
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
-                var table_div = document.getElementById('content_div');
+                var table_div = document.getElementById('table_div');
                 table_div.innerHTML = "Trends for " + prefs.getString("product_name") + "!";
                 table_div.style.width = document.body.clientWidth + 'px';
                 table_div.style.height = document.body.clientHeight + 'px';
