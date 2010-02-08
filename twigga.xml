@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="Twigga" />
+    <ModulePrefs title="Twigga"
+        description="Simple twitter stats gatherer for Google docs" >
+    </ModulePrefs>
+    <UserPref name="product_name" display_name="Product name" required="true"/>
     <Content type="html">
         <![CDATA[
-        Twigga - simple twitter stats gatherer for Google docs
+        <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;">
+            Twigga - simple twitter stats gatherer for Google docs
+        </div>
+
+        <script type="text/javascript">
+            var prefs = new gadgets.Prefs();
+
+        </script>
         ]]>
     </Content>
 </Module>
