@@ -12,9 +12,6 @@
         <script
             src="http://www.google.com/jsapi"
             type="text/javascript" type="text/javascript"></script>
-        <script
-            src="http://jquery-twitter-api.googlecode.com/svn/trunk/jquery-twitter-plugin.js"
-            type="text/javascript"></script>
 
         <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;"/>
 
@@ -28,6 +25,23 @@
 
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
+                var jssrc = "http://jquery-twitter-api.googlecode.com/svn/trunk/jquery-twitter-plugin.js";
+                var head = document.getElementsByTagName('head')[0];
+                var scripts = document.getElementsByTagName('script');
+                var isPresent = false;
+                for (var i; i < scripts.length; ++i) {
+                    if(scripts[i].src.toLowerCase() == jssrc.toLowerCase()) {
+                        isPresent = true;
+                        break;
+                    }
+                }
+                if (!isPresent) {
+                    var newjs = document.createElement('script');
+                    newjs.type = 'text/javascript';
+                    newjs.source = jssrc;
+                    head.appendChild(newjs);
+                }
+                
                 var content_div = document.getElementById('content_div');
                 content_div.innerHTML = "Hello, " + prefs.getString("product_name") + "!";
                 content_div.style.width = document.body.clientWidth + 'px';
