@@ -3,10 +3,6 @@
     <ModulePrefs 
         title="Twigga"
         description="Simple twitter stats gatherer for Google docs"/>
-    <UserPref
-        name="product_name"
-        display_name="Product name"
-        required="true"/>
     <Content type="html">
         <![CDATA[
         <script
@@ -28,14 +24,20 @@
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
                 var tablediv = document.getElementById('tablediv');
-                tablediv.innerHTML = "Trends for " + prefs.getString("product_name") + "!";
+                tablediv.innerHTML = "";
                 tablediv.style.width = document.body.clientWidth + 'px';
                 tablediv.style.height = document.body.clientHeight + 'px';
                 $.getJSON("http://search.twitter.com/trends.json?count=10&callback=?", function(data) {
                     tablediv.innerHTML += "<table>";
+                    tablediv.innerHTML += "<thead><tr><th>Name</th><th>Url</th></tr></thead>";
+                    tablediv.innerHTML += "<tbody>";
                     for (var i = 0; i < data.trends.length; i++) {
-                        tablediv.innerHTML += "<tr><td>" + data.trends[i].name + "</td></tr>";
+                        tablediv.innerHTML += "<tr>";
+                        tablediv.innerHTML += "<td>" + data.trends[i].name + "</td>";
+                        tablediv.innerHTML += "<td>" + data.trends[i].url + "</td>";
+                        tablediv.innerHTML += "</tr>";
                     }
+                    tablediv.innerHTML += "</tbody>";
                     tablediv.innerHTML += "</table>";
                 });
             }
