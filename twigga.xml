@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="Twigga"
-        description="Simple twitter stats gatherer for Google docs" >
-    </ModulePrefs>
-    <UserPref name="product_name" display_name="Product name" required="true"/>
+    <ModulePrefs 
+        title="Twigga"
+        description="Simple twitter stats gatherer for Google docs"/>
+    <UserPref
+        name="product_name"
+        display_name="Product name"
+        required="true"/>
     <Content type="html">
         <![CDATA[
         <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;">
