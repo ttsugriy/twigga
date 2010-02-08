@@ -7,7 +7,7 @@
         <![CDATA[
         <script
             src="http://www.google.com/jsapi"
-            type="text/javascript" type="text/javascript"></script>
+            type="text/javascript"></script>
 
         <div id="tablediv" style="overflow: auto;">
             <img src="http://www.google.com/ig/images/spinner.gif" />
