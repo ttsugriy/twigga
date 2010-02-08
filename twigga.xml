@@ -13,7 +13,7 @@
             src="http://www.google.com/jsapi"
             type="text/javascript" type="text/javascript"></script>
 
-        <div id="table_div" style="overflow: auto;">
+        <div id="tablediv" style="overflow: auto;">
             <img src="http://www.google.com/ig/images/spinner.gif" />
         </div>
 
@@ -27,16 +27,16 @@
 
             function sendQuery() {
                 var prefs = new gadgets.Prefs();
-                var table_div = document.getElementById('table_div');
-                table_div.innerHTML = "Trends for " + prefs.getString("product_name") + "!";
-                table_div.style.width = document.body.clientWidth + 'px';
-                table_div.style.height = document.body.clientHeight + 'px';
+                var tablediv = document.getElementById('tablediv');
+                tablediv.innerHTML = "Trends for " + prefs.getString("product_name") + "!";
+                tablediv.style.width = document.body.clientWidth + 'px';
+                tablediv.style.height = document.body.clientHeight + 'px';
                 $.getJSON("http://search.twitter.com/trends.json?count=10&callback=?", function(data) {
-                    table_div.innerHTML += "<table>";
+                    tablediv.innerHTML += "<table>";
                     for (var i = 0; i < data.trends.length; i++) {
-                        table_div.innerHTML += "<tr><td>" + data.trends[i].name + "</td></tr>";
+                        tablediv.innerHTML += "<tr><td>" + data.trends[i].name + "</td></tr>";
                     }
-                    table_div.innerHTML += "</table>";
+                    tablediv.innerHTML += "</table>";
                 });
             }
 
