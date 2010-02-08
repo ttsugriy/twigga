@@ -23,13 +23,11 @@
             }
         </script>
 
-        <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;">
-            Twigga - simple twitter stats gatherer for Google docs
-        </div>
+        <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;"/>
 
         <script type="text/javascript">
             var prefs = new gadgets.Prefs();
-            $("#content_div").text("Hello, world!");
+            $("#content_div").html("Hello, world!");
         </script>
         ]]>
     </Content>
