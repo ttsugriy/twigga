@@ -4,7 +4,7 @@ Simple twitter stats gatherer for Google docs.
 
 = Installation
 
-Open a new spreadsheet and click "Insert" -> "Gadget" -> "Custom", input url to [this gadget]{http://github.com/ttsugriy/twigga/blob/master/twigga.xml} and press "OK".
+Open a new spreadsheet and click "Insert" -> "Gadget" -> "Custom", input url to {this gadget}[http://github.com/ttsugriy/twigga/blob/master/twigga.xml] and press "OK".
 
 = LICENSE
 
